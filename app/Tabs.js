@@ -14,12 +14,12 @@ export default function Tabs() {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-8">
+    <div className='flex flex-wrap justify-center gap-8'>
       {tabs.map((tab) => (
         <Link
           href={tab.href}
           key={tab.id}
-          className="relative"
+          className='relative'
           onMouseEnter={() => setHovered(tab.id)}
           onMouseLeave={() => setHovered(null)}
         >
@@ -35,7 +35,7 @@ export default function Tabs() {
               hovered !== null && hovered !== tab.id ? 'opacity-0' : 'opacity-100'
             }`}
           >
-            <span className="text-white text-lg font-semibold bg-black bg-opacity-60 px-4 py-2 rounded">
+            <span className='text-white text-lg font-semibold bg-black bg-opacity-60 px-4 py-2 rounded'>
               {tab.alt}
             </span>
           </div>

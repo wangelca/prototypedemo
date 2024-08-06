@@ -73,44 +73,44 @@ export default function ViewInfo() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-gray-800 text-white py-6 px-4 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-4xl font-bold">Discover Colorful Parks</h1>
-          <span className="text-xl font-semibold">Welcome, John S.</span>
-          <nav className="space-x-4">
-            <a href="#" className="hover:underline">Profile</a>
-            <a href="#" className="hover:underline">Settings</a>
-            <a href="#" className="hover:underline">Logout</a>
+    <div className='flex flex-col min-h-screen bg-gray-50'>
+      <header className='bg-gray-800 text-white py-6 px-4 shadow-md'>
+        <div className='container mx-auto flex justify-between items-center'>
+          <h1 className='text-4xl font-bold'>Discover Colorful Parks</h1>
+          <span className='text-xl font-semibold'>Welcome, John S.</span>
+          <nav className='space-x-4'>
+            <a href='#' className='hover:underline'>Profile</a>
+            <a href='#' className='hover:underline'>Settings</a>
+            <a href='#' className='hover:underline'>Logout</a>
           </nav>
         </div>
       </header>
-      <main className="flex-grow p-8 flex flex-col items-center">
-        <div className="flex flex-col md:flex-row gap-8 w-full max-w-screen-lg bg-white p-8 rounded-lg shadow-lg">
-          <div className="flex flex-col items-center mb-8 md:mb-0">
-            <img src={image} alt="Park" className="w-full md:w-80 h-auto rounded-lg shadow-md mb-4" />
+      <main className='flex-grow p-8 flex flex-col items-center'>
+        <div className='flex flex-col md:flex-row gap-8 w-full max-w-screen-lg bg-white p-8 rounded-lg shadow-lg'>
+          <div className='flex flex-col items-center mb-8 md:mb-0'>
+            <img src={image} alt='Park' className='w-full md:w-80 h-auto rounded-lg shadow-md mb-4' />
             <input 
-              type="text" 
+              type='text' 
               value={newImageURL} 
               onChange={(e) => setNewImageURL(e.target.value)} 
-              placeholder="Enter new image URL"
-              className="w-full p-3 border border-gray-300 rounded-lg text-gray-800 mb-2"
+              placeholder='Enter new image URL'
+              className='w-full p-3 border border-gray-300 rounded-lg text-gray-800 mb-2'
             />
             <button 
               onClick={handleChangeImage} 
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
+              className='px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700'
             >
               Change Image
             </button>
           </div>
 
-          <div className="flex-grow">
-            <form className="space-y-6">
+          <div className='flex-grow'>
+            <form className='space-y-6'>
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">Park:</label>
+                <label className='block text-gray-700 font-semibold mb-2'>Park:</label>
                 <input 
-                  type="text" 
-                  name="park" 
+                  type='text' 
+                  name='park' 
                   value={formData.park} 
                   onChange={handleInputChange} 
                   readOnly={!isEditing}
@@ -119,10 +119,10 @@ export default function ViewInfo() {
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">Location:</label>
+                <label className='block text-gray-700 font-semibold mb-2'>Location:</label>
                 <input 
-                  type="text" 
-                  name="location" 
+                  type='text' 
+                  name='location' 
                   value={formData.location} 
                   onChange={handleInputChange} 
                   readOnly={!isEditing}
@@ -131,16 +131,16 @@ export default function ViewInfo() {
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">Recommended Price Breakdown:</label>
-                <ul className="list-disc pl-5 space-y-2 text-black">
+                <label className='block text-gray-700 font-semibold mb-2'>Recommended Price Breakdown:</label>
+                <ul className='list-disc pl-5 space-y-2 text-black'>
                   {formData.priceBreakdown.map((item, index) => (
                     <li key={index}>
                       {isEditing ? (
                         <input 
-                          type="text" 
+                          type='text' 
                           value={item} 
                           onChange={(e) => handlePriceBreakdownChange(e, index)} 
-                          className="w-full p-2 border border-gray-300 rounded-lg bg-white shadow-sm text-black"
+                          className='w-full p-2 border border-gray-300 rounded-lg bg-white shadow-sm text-black'
                         />
                       ) : (
                         item
@@ -151,20 +151,20 @@ export default function ViewInfo() {
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">Description:</label>
+                <label className='block text-gray-700 font-semibold mb-2'>Description:</label>
                 <textarea 
-                  name="description"
+                  name='description'
                   value={formData.description}
                   onChange={handleTextareaChange}
                   readOnly={!isEditing}
                   className={`w-full p-3 border border-gray-300 rounded-lg ${!isEditing ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'} shadow-sm text-black`}
-                  rows="6"
+                  rows='6'
                 />
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">Recommended Locations:</label>
-                <ul className="list-disc pl-5 space-y-2 text-black">
+                <label className='block text-gray-700 font-semibold mb-2'>Recommended Locations:</label>
+                <ul className='list-disc pl-5 space-y-2 text-black'>
                   {formData.recommendedLocations.map((location, index) => (
                     <li key={index}>{location}</li>
                   ))}
@@ -172,13 +172,13 @@ export default function ViewInfo() {
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">Emergency Contact Information:</label>
-                <div className="space-y-4">
+                <label className='block text-gray-700 font-semibold mb-2'>Emergency Contact Information:</label>
+                <div className='space-y-4'>
                   <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Police:</label>
+                    <label className='block text-gray-700 font-semibold mb-2'>Police:</label>
                     <input 
-                      type="text" 
-                      name="police" 
+                      type='text' 
+                      name='police' 
                       value={formData.emergencyInfo.police} 
                       onChange={handleEmergencyInfoChange} 
                       readOnly={!isEditing}
@@ -186,10 +186,10 @@ export default function ViewInfo() {
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Fire Department:</label>
+                    <label className='block text-gray-700 font-semibold mb-2'>Fire Department:</label>
                     <input 
-                      type="text" 
-                      name="firemen" 
+                      type='text' 
+                      name='firemen' 
                       value={formData.emergencyInfo.firemen} 
                       onChange={handleEmergencyInfoChange} 
                       readOnly={!isEditing}
@@ -200,9 +200,9 @@ export default function ViewInfo() {
               </div>
 
               <button 
-                type="button" 
+                type='button' 
                 onClick={handleEditToggle} 
-                className="px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700"
+                className='px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700'
               >
                 {isEditing ? 'Save Changes' : 'Edit Information'}
               </button>
@@ -212,20 +212,20 @@ export default function ViewInfo() {
       </main>
 
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-80 text-black">
-            <h2 className="text-lg font-semibold mb-4 text-center">Confirm Changes</h2>
-            <p className="mb-4 text-center">Are you sure you want to save these changes?</p>
-            <div className="flex justify-center gap-4">
+        <div className='fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50'>
+          <div className='bg-white p-6 rounded-lg shadow-lg w-80 text-black'>
+            <h2 className='text-lg font-semibold mb-4 text-center'>Confirm Changes</h2>
+            <p className='mb-4 text-center'>Are you sure you want to save these changes?</p>
+            <div className='flex justify-center gap-4'>
               <button 
                 onClick={handleConfirmChanges} 
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
+                className='px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700'
               >
                 Confirm
               </button>
               <button 
                 onClick={handleCancelChanges} 
-                className="px-4 py-2 bg-gray-600 text-white rounded-lg shadow-md hover:bg-gray-700"
+                className='px-4 py-2 bg-gray-600 text-white rounded-lg shadow-md hover:bg-gray-700'
               >
                 Cancel
               </button>
@@ -234,7 +234,7 @@ export default function ViewInfo() {
         </div>
       )}
 
-      <footer className="bg-gray-800 text-white py-4 text-center">
+      <footer className='bg-gray-800 text-white py-4 text-center'>
         <p>&copy; 2024 Discover Colorful Parks. All rights reserved.</p>
       </footer>
     </div>

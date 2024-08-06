@@ -72,30 +72,30 @@ export default function ModifyParks() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
-      <header className="bg-gray-800 text-white py-6 px-4 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Discover Colorful Parks</h1>
-          <span className="text-lg font-semibold">Welcome, John S.</span>
-          <nav className="space-x-4">
-            <a href="#" className="hover:underline">Profile</a>
-            <a href="#" className="hover:underline">Settings</a>
-            <a href="#" className="hover:underline">Logout</a>
+    <div className='flex flex-col min-h-screen bg-gray-100'>
+      <header className='bg-gray-800 text-white py-6 px-4 shadow-md'>
+        <div className='container mx-auto flex justify-between items-center'>
+          <h1 className='text-3xl font-bold'>Discover Colorful Parks</h1>
+          <span className='text-lg font-semibold'>Welcome, John S.</span>
+          <nav className='space-x-4'>
+            <a href='#' className='hover:underline'>Profile</a>
+            <a href='#' className='hover:underline'>Settings</a>
+            <a href='#' className='hover:underline'>Logout</a>
           </nav>
         </div>
       </header>
-      <main className="flex-grow p-8">
-        <div className="text-center mb-6">
-          <p className="text-2xl font-semibold mb-2 text-gray-800">Find a park</p>
+      <main className='flex-grow p-8'>
+        <div className='text-center mb-6'>
+          <p className='text-2xl font-semibold mb-2 text-gray-800'>Find a park</p>
           <input
-            type="text"
-            placeholder="Search parks..."
+            type='text'
+            placeholder='Search parks...'
             value={searchTerm}
             onChange={handleSearchChange}
-            className="p-4 border border-gray-300 rounded-lg w-full max-w-md mx-auto text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className='p-4 border border-gray-300 rounded-lg w-full max-w-md mx-auto text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
           />
         </div>
-        <div className="flex flex-wrap justify-center mb-6 space-x-4">
+        <div className='flex flex-wrap justify-center mb-6 space-x-4'>
           <button
             onClick={() => handleProvinceChange('')}
             className={`px-5 py-2 rounded-lg ${selectedProvince === '' ? 'bg-blue-600 text-white shadow-md' : 'bg-gray-300 text-black hover:bg-gray-400'}`}
@@ -181,39 +181,39 @@ export default function ModifyParks() {
             Yukon
           </button>
         </div>
-        <div className="flex justify-center mb-6">
+        <div className='flex justify-center mb-6'>
           <button
             onClick={() => router.push('/add-park')}
-            className="px-5 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
+            className='px-5 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700'
           >
             Add New Park
           </button>
         </div>
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-300">
+        <div className='overflow-x-auto'>
+          <table className='min-w-full bg-white border border-gray-300'>
             <thead>
-              <tr className="text-center">
-                <th className="py-3 px-4 border-b text-black">Park Name</th>
-                <th className="py-3 px-4 border-b text-black">Province</th>
-                <th className="py-3 px-4 border-b text-black">Actions</th>
+              <tr className='text-center'>
+                <th className='py-3 px-4 border-b text-black'>Park Name</th>
+                <th className='py-3 px-4 border-b text-black'>Province</th>
+                <th className='py-3 px-4 border-b text-black'>Actions</th>
               </tr>
             </thead>
             <tbody>
               {displayedParks.map((park) => (
-                <tr key={park.id} className="text-center">
-                  <td className="py-3 px-4 border-b text-black">{park.name}</td>
-                  <td className="py-3 px-4 border-b text-black">{park.province}</td>
-                  <td className="py-3 px-4 border-b text-black">
-                    <div className="flex justify-center space-x-2">
+                <tr key={park.id} className='text-center'>
+                  <td className='py-3 px-4 border-b text-black'>{park.name}</td>
+                  <td className='py-3 px-4 border-b text-black'>{park.province}</td>
+                  <td className='py-3 px-4 border-b text-black'>
+                    <div className='flex justify-center space-x-2'>
                       <button
                         onClick={() => handleViewPark(park.id)}
-                        className="bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700"
+                        className='bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700'
                       >
                         View
                       </button>
                       <button
                         onClick={() => handleDeletePark(park.id)}
-                        className="bg-red-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-700"
+                        className='bg-red-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-700'
                       >
                         Delete
                       </button>
@@ -224,27 +224,27 @@ export default function ModifyParks() {
             </tbody>
           </table>
         </div>
-        <div className="flex justify-center mt-6">
+        <div className='flex justify-center mt-6'>
           <button
             onClick={() => setCurrentPage(currentPage - 1)}
             disabled={currentPage === 1}
-            className="px-4 py-2 border border-gray-300 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"
+            className='px-4 py-2 border border-gray-300 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50'
           >
             Previous
           </button>
-          <span className="mx-4 text-black">
+          <span className='mx-4 text-black'>
             Page {currentPage} of {totalPages}
           </span>
           <button
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className="px-4 py-2 border border-gray-300 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"
+            className='px-4 py-2 border border-gray-300 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50'
           >
             Next
           </button>
         </div>
       </main>
-      <footer className="bg-gray-800 text-white py-4 px-6 text-center">
+      <footer className='bg-gray-800 text-white py-4 px-6 text-center'>
         <p>&copy; 2024 Discover Colorful Parks</p>
       </footer>
     </div>
